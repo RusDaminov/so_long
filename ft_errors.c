@@ -30,3 +30,33 @@ void	ft_check_enemy(t_game *game)
 	if (game->map[game->pos_y][game->pos_x] == 'X')
 		ft_close_game();
 }
+
+void	ft_put_images_to_window(t_game *game, int i, int j)
+{
+	while (i < game->width)
+	{
+		j = 0;
+		while (j < game->height)
+			game->map[j++][i] = '1';
+		i++;
+	}
+}
+
+void	ft_win_lose(t_game *game, int flag)
+{
+	int iw;
+	int ih;
+
+	game->wall	= mlx_xpm_file_to_image(game->mlx, "./imgs/tilest1.xpm", &iw, &ih);
+	ft_put_images_to_window(game, 0, 0);
+	if (flag == 1)
+	{
+		game->winner = 1;
+		ft_error("You Win!\n");
+	}
+	else
+	{
+		game->winner = -1;
+		ft_error("Game Over!\n");
+	}
+}

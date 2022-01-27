@@ -64,7 +64,7 @@ char	**ft_read_map(char *file)
 {
     int 	count_line;
 	int		fd;
-	int 	**map;
+	char 	**map;
 	int 	f;
 	int		i;
 

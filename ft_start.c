@@ -35,13 +35,13 @@ int		ft_key_press(int key, t_game *game)
 		exit(0);
 	}
 	if (key == 13)
-		move_up(game);
+		ft_move_up(game);
 	if (key == 1)
-		move_down(game);
+		ft_move_down(game);
 	if (key == 0)
-		move_left(game);
+		ft_move_left(game);
 	if (key == 2)
-		move_right(game);
+		ft_move_right(game);
 	ft_check_enemy(game);
 	ft_put_images(game, 0, 0);
 	return 0;
@@ -56,7 +56,7 @@ void	ft_start(t_game *game)
 	window_height = game->height * IMGSIZE;
 	window_width = game->width * IMGSIZE;
 	game->window = mlx_new_window(game->mlx, window_width, window_height, "So_Long");
-	if (ft_open_images(game) == -1)
+	if (ft_render_img(game) == -1)
 		ft_error("Error opening images\n");
 	ft_put_images(game, 0, 0);
 	mlx_key_hook(game->window, ft_key_press, game);
@@ -65,9 +65,5 @@ void	ft_start(t_game *game)
 	mlx_loop(game->mlx);
 }
 
-int		ft_open_images(t_game *game)
-{
-
-}
 
 
