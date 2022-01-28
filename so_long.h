@@ -34,72 +34,54 @@ typedef struct s_game
 	int		pos_y;
 	int		enemies;
 	int		space;
-
 	void	*enemy;
+	void	*enemy2;
 	void	*ground;
 	void	*wall;
 	void	*exit_img;
 	void	*collect_img;
-	void	*collred_img;
-
-	void	*player_up_img;
-	void	*player_dwn_img;
+	void	*collect2_img;
+	void	*player_u_img;
+	void	*player_d_img;
 	void	*player_l_img;
 	void	*player_r_img;
-
 	int 	exit;
 	int		moves;
 	int 	winner;
 	int 	ter_x;
 	int 	ter_y;
     void    *mlx;
-
-	int 	move_u;
-	int 	move_l;
-	int 	move_c;
 }	t_game;
 
-typedef struct s_img
-{
-    void	*path;
-    int		x_size;
-    int		y_size;
-}	t_img;
-
-
-
+// so_long
 int 	main(int ac, char **av);
-
+// ft_error
 void 	ft_error(const char *text);
 int 	ft_close_game(void);
 void	ft_check_enemy(t_game *game);
 void	ft_put_images_to_window(t_game *game, int i, int j);
 void	ft_win_lose(t_game *game, int flag);
-
+// ft_parsing
 char 	**ft_parsing(char *file);
-
+// ft_map_validation
 void	ft_map_validation(t_game *game);
-
+// ft_start
 void	ft_start(t_game *game);
 void 	ft_put_enemy(t_game *game);
-
+// ft_put_images
 void	ft_put_images(t_game *game, int i, int j);
-void 	ft_check_win(t_game *game, int s_x, int s_y, char *s);
 void	ft_put_image_to_window(t_game *game, char c, int x, int y);
 int		ft_animation(t_game *game);
-
+// ft_moves
 void 	ft_move_up(t_game *game);
 void	ft_move_down(t_game *game);
 void	ft_move_left(t_game *game);
 void	ft_move_right(t_game *game);
-
+// ft_render
 int 	ft_render_img(t_game *game);
-
+// ft_enemy
 int 	ft_move_enemy(t_game *game);
 void	ft_move_enemy_left(t_game *game, int *f);
 void	ft_move_enemy_right(t_game *game, int *f);
-void	ft_move_enemy_down(t_game *game, int *f);
-void	ft_move_enemy_up(t_game *game, int *f);
-
 
 #endif

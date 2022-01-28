@@ -38,7 +38,7 @@ char	*get_next_line(int fd, int *f)
 	return (str);
 }
 
-int		count_map_lines(char *file)
+int		ft_count_map_lines(char *file)
 {
 	int		count_line;
 	int 	fd;
@@ -68,7 +68,7 @@ char	**ft_parsing(char *file)
 	int 	f;
 	int		i;
 
-	count_line = count_map_lines(file);
+	count_line = ft_count_map_lines(file);
 	f = 1;
 	fd = open(file, O_RDONLY);
 	map = malloc(sizeof(char **) * (count_line + 1));

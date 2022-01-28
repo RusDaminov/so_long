@@ -32,20 +32,11 @@ void 	ft_move_up(t_game *game)
 	{
 		if (game->map[game->pos_y - 1][game->pos_x] == 'C')
 			game->collect--;
-		if (game->map[game->pos_y - 1][game->pos_x] == 'X')
-			ft_win_lose(game, 1);
+		if (game->map[game->pos_y - 1][game->pos_x] == 'T')
+			ft_win_lose(game, 0);
 		game->map[game->pos_y][game->pos_x] = '0';
 		game->pos_y--;
-		if (game->move_u == 0)
-		{
-			game->map[game->pos_y][game->pos_x] = 'U';
-			game->move_u = 1;
-		}
-		else
-		{
-			game->map[game->pos_y][game->pos_x] = 'u';
-			game->move_u = 0;
-		}
+		game->map[game->pos_y][game->pos_x] = 'U';
 		game->moves++;
 		printf("Moves: %d\n", game->moves);
 	}
@@ -58,7 +49,7 @@ void	ft_move_down(t_game *game)
 	{
 		if (game->map[game->pos_y + 1][game->pos_x] == 'C')
 			game->collect--;
-		if (game->map[game->pos_y + 1][game->pos_x] == 'X')
+		if (game->map[game->pos_y + 1][game->pos_x] == 'T')
 			ft_win_lose(game, 0);
 		game->map[game->pos_y][game->pos_x] = '0';
 		game->pos_y++;
@@ -74,20 +65,11 @@ void	ft_move_left(t_game *game)
 	if (!(ft_strchr("1E", game->map[game->pos_y][game->pos_x - 1]))) {
 		if (game->map[game->pos_y][game->pos_x - 1] == 'C')
 			game->collect--;
-		if (game->map[game->pos_y][game->pos_x - 1] == 'X')
+		if (game->map[game->pos_y][game->pos_x - 1] == 'T')
 			ft_win_lose(game, 0);
 		game->map[game->pos_y][game->pos_x] = '0';
 		game->pos_x--;
-		if (game->move_l == 0)
-		{
-			game->map[game->pos_y][game->pos_x] = 'L';
-			game->move_l = 1;
-		}
-		else
-		{
-			game->map[game->pos_y][game->pos_x] = 'l';
-			game->move_l = 0;
-		}
+		game->map[game->pos_y][game->pos_x] = 'L';
 		game->moves++;
 		printf("Moves: %d\n", game->moves);
 
@@ -100,20 +82,11 @@ void	ft_move_right(t_game *game)
 	if (!(ft_strchr("1E", game->map[game->pos_y][game->pos_x + 1]))) {
 		if (game->map[game->pos_y][game->pos_x + 1] == 'C')
 			game->collect--;
-		if (game->map[game->pos_y][game->pos_x + 1] == 'X')
+		if (game->map[game->pos_y][game->pos_x + 1] == 'T')
 			ft_win_lose(game, 0);
 		game->map[game->pos_y][game->pos_x] = '0';
 		game->pos_x++;
-		if (game->move_l == 0)
-		{
-			game->map[game->pos_y][game->pos_x] = 'R';
-			game->move_l = 1;
-		}
-		else
-		{
-			game->map[game->pos_y][game->pos_x] = 'r';
-			game->move_l = 0;
-		}
+		game->map[game->pos_y][game->pos_x] = 'R';
 		game->moves++;
 		printf("Moves: %d\n", game->moves);
 

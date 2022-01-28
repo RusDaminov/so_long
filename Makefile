@@ -12,7 +12,7 @@ CC		=	gcc
 
 LIBFT	=	-L libft -lft
 
-INC		=	-I includes -I lib -I mlx
+INC		=	-I includes -I libft -I mlx
 
 CFLAGS	=	-Wall -Wextra -Werror -I $(HEADER) -Imlx
 

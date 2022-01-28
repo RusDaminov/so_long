@@ -12,26 +12,11 @@
 
 #include "so_long.h"
 
-void 	ft_put_enemy(t_game *game)
-{
-	if (game->width > 6 && game->height > 3)
-	{
-		if (!(ft_strchr("1ECP", game->map[game->height - 2]
-			[game->width - 3])))
-		{
-			game->map[game->height - 2][game->width - 3] = 'X';
-			game->ter_x = game->width - 3;
-			game->ter_y = game->height - 2;
-			game->enemies = 1;
-		}
-	}
-}
-
 int		ft_key_press(int key, t_game *game)
 {
 	if (key == 53)
 	{
-		ft_error("Farewell\n");
+		printf("Farewell!");
 		exit(0);
 	}
 	if (key == 13)
@@ -44,26 +29,23 @@ int		ft_key_press(int key, t_game *game)
 		ft_move_right(game);
 	ft_check_enemy(game);
 	ft_put_images(game, 0, 0);
-	return 0;
+	return (0);
 }
 
 void	ft_start(t_game *game)
 {
-	int	window_height;
-	int window_width;
+	int	win_h;
+	int	win_w;
 
 	game->mlx = mlx_init();
-	window_height = game->height * IMGSIZE;
-	window_width = game->width * IMGSIZE;
-	game->window = mlx_new_window(game->mlx, window_width, window_height, "So_Long");
+	win_h = game->height * IMGSIZE;
+	win_w = game->width * IMGSIZE;
+	game->window = mlx_new_window(game->mlx, win_w, win_h, "so_long");
 	if (ft_render_img(game) == -1)
-		ft_error("Error opening images\n");
+		ft_error("Error! Can't open images!\n");
 	ft_put_images(game, 0, 0);
 	mlx_key_hook(game->window, ft_key_press, game);
 	mlx_loop_hook(game->mlx, ft_animation, game);
 	mlx_hook(game->window, 17, 0L, ft_close_game, 0);
 	mlx_loop(game->mlx);
 }
-
-
-

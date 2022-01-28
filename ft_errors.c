@@ -27,7 +27,7 @@ int 	ft_close_game(void)
 
 void	ft_check_enemy(t_game *game)
 {
-	if (game->map[game->pos_y][game->pos_x] == 'X')
+	if (game->map[game->pos_y][game->pos_x] == 'T')
 		ft_close_game();
 }
 
@@ -47,7 +47,7 @@ void	ft_win_lose(t_game *game, int flag)
 	int iw;
 	int ih;
 
-	game->wall	= mlx_xpm_file_to_image(game->mlx, "./imgs/tilest1.xpm", &iw, &ih);
+	game->wall	= mlx_xpm_file_to_image(game->mlx, "./imgs/wall.xpm", &iw, &ih);
 	ft_put_images_to_window(game, 0, 0);
 	if (flag == 1)
 	{
