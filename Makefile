@@ -10,7 +10,7 @@ OBJS	=	$(SRCS:%.c=%.o)
 
 CC		=	gcc
 
-LIBFT	=	-L lib -lft
+LIBFT	=	-L libft -lft
 
 INC		=	-I includes -I lib -I mlx
 

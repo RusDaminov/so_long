@@ -61,7 +61,7 @@ void	ft_start(t_game *game)
 	ft_put_images(game, 0, 0);
 	mlx_key_hook(game->window, ft_key_press, game);
 	mlx_loop_hook(game->mlx, ft_animation, game);
-	mlx_hook(game->window, 17, 0L, ft_close_game);
+	mlx_hook(game->window, 17, 0L, ft_close_game, 0);
 	mlx_loop(game->mlx);
 }
 

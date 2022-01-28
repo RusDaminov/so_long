@@ -19,7 +19,7 @@
 # include "mlx/mlx_mms/mlx.h"
 # include "libft/libft.h"
 
-# define IMGSIZE 20
+# define IMGSIZE 40
 
 
 typedef struct s_game
@@ -71,12 +71,12 @@ typedef struct s_img
 int 	main(int ac, char **av);
 
 void 	ft_error(const char *text);
-void	ft_close_game(void);
+int 	ft_close_game(void);
 void	ft_check_enemy(t_game *game);
 void	ft_put_images_to_window(t_game *game, int i, int j);
 void	ft_win_lose(t_game *game, int flag);
 
-char 	**ft_read_map(char *file);
+char 	**ft_parsing(char *file);
 
 void	ft_map_validation(t_game *game);
 
@@ -96,5 +96,10 @@ void	ft_move_right(t_game *game);
 int 	ft_render_img(t_game *game);
 
 int 	ft_move_enemy(t_game *game);
+void	ft_move_enemy_left(t_game *game, int *f);
+void	ft_move_enemy_right(t_game *game, int *f);
+void	ft_move_enemy_down(t_game *game, int *f);
+void	ft_move_enemy_up(t_game *game, int *f);
+
 
 #endif

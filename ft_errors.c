@@ -19,7 +19,7 @@ void	ft_error(const char *text)
     exit(EXIT_FAILURE);
 }
 
-void	ft_close_game(void)
+int 	ft_close_game(void)
 {
 	ft_error("Game Over\n");
 	exit(0);

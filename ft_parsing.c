@@ -60,7 +60,7 @@ int		count_map_lines(char *file)
 	return (count_line);
 }
 
-char	**ft_read_map(char *file)
+char	**ft_parsing(char *file)
 {
     int 	count_line;
 	int		fd;
