@@ -16,7 +16,7 @@ char	*get_next_line(int fd, int *f)
 {
 	char	*str;
 	char	buf[2];
-	int 	byte;
+	int		byte;
 
 	str = ft_calloc(1, 1);
 	if (!str)
@@ -28,7 +28,7 @@ char	*get_next_line(int fd, int *f)
 		if (byte == -1)
 			ft_error("Error reading file!\n");
 		if (buf[0] == '\n' || byte == 0)
-			break;
+			break ;
 		if (!(ft_strchr("10CPE", buf[0])))
 			ft_error("Wrong symbols!\n");
 		str = ft_strjoin(str, buf);
@@ -38,12 +38,12 @@ char	*get_next_line(int fd, int *f)
 	return (str);
 }
 
-int		ft_count_map_lines(char *file)
+int	ft_count_map_lines(char *file)
 {
 	int		count_line;
-	int 	fd;
+	int		fd;
 	int		byte;
-	char 	buf[2];
+	char	buf[2];
 
 	fd = open(file, O_RDONLY);
 	count_line = 0;
@@ -62,10 +62,10 @@ int		ft_count_map_lines(char *file)
 
 char	**ft_parsing(char *file)
 {
-    int 	count_line;
+	int		count_line;
 	int		fd;
-	char 	**map;
-	int 	f;
+	char	**map;
+	int		f;
 	int		i;
 
 	count_line = ft_count_map_lines(file);
@@ -80,4 +80,15 @@ char	**ft_parsing(char *file)
 	map[++i] = NULL;
 	close(fd);
 	return (map);
+}
+
+void	ft_put_images_to_window(t_game *game, int i, int j)
+{
+	while (i < game->width)
+	{
+		j = 0;
+		while (j < game->height)
+			game->map[j++][i] = '1';
+		i++;
+	}
 }

@@ -16,8 +16,7 @@ void	ft_put_enemy(t_game *game)
 {
 	if (game->width > 6 && game->height > 3)
 	{
-		if (!(ft_strchr("1ECP", game->map[game->height - 2]
-		[game->width - 3])))
+		if (!(ft_strchr("1ECP", game->map[game->height - 2][game->width - 3])))
 		{
 			game->map[game->height - 2][game->width - 3] = 'T';
 			game->ter_x = game->width - 3;
@@ -27,7 +26,8 @@ void	ft_put_enemy(t_game *game)
 	}
 }
 
-void	ft_init_struct(t_game *game) {
+void	ft_init_struct(t_game *game)
+{
 	game->map = NULL;
 	game->height = 0;
 	game->width = 0;
@@ -57,7 +57,7 @@ void	ft_check_extension(char *ber)
 
 int	main(int argc, char **argv)
 {
-	t_game 	game;
+	t_game	game;
 
 	if (argc == 2)
 	{
@@ -73,7 +73,7 @@ int	main(int argc, char **argv)
 	return (0);
 }
 
-int 	ft_close_game(void)
+int	ft_close_game(void)
 {
 	ft_error("Farewell\n");
 	exit(0);

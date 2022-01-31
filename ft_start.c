@@ -12,7 +12,7 @@
 
 #include "so_long.h"
 
-int		ft_key_press(int key, t_game *game)
+int	ft_key_press(int key, t_game *game)
 {
 	if (key == 53)
 	{

@@ -19,7 +19,6 @@ void	ft_move_enemy_left(t_game *game, int *f)
 		game->map[game->ter_y][game->ter_x - 1] = 'T';
 		game->map[game->ter_y][game->ter_x] = '0';
 		game->ter_x--;
-
 	}
 	else
 	{
@@ -41,10 +40,10 @@ void	ft_move_enemy_right(t_game *game, int *f)
 	}
 }
 
-int 	ft_move_enemy(t_game *game)
+int	ft_move_enemy(t_game *game)
 {
-	static int u;
-	static int f;
+	static int	u;
+	static int	f;
 
 	if (u % 15 == 0 || f == 0)
 		ft_move_enemy_left(game, &f);
