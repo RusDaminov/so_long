@@ -59,8 +59,7 @@ int 	main(int ac, char **av);
 void 	ft_error(const char *text);
 int 	ft_close_game(void);
 void	ft_check_enemy(t_game *game);
-void	ft_put_images_to_window(t_game *game, int i, int j);
-void	ft_win_lose(t_game *game, int flag);
+void	ft_win(t_game *game, int flag);
 // ft_parsing
 char 	**ft_parsing(char *file);
 // ft_map_validation
@@ -71,7 +70,9 @@ void 	ft_put_enemy(t_game *game);
 // ft_put_images
 void	ft_put_images(t_game *game, int i, int j);
 void	ft_put_image_to_window(t_game *game, char c, int x, int y);
+void	ft_put_images_to_window(t_game *game, int i, int j);
 int		ft_animation(t_game *game);
+void	ft_check_winner(t_game *game, int s_x, int s_y, char *s);
 // ft_moves
 void 	ft_move_up(t_game *game);
 void	ft_move_down(t_game *game);

@@ -26,7 +26,7 @@ char	*get_next_line(int fd, int *f)
 	{
 		byte = read(fd, buf, 1);
 		if (byte == -1)
-			ft_error("Error reading file\n");
+			ft_error("Error reading file!\n");
 		if (buf[0] == '\n' || byte == 0)
 			break;
 		if (!(ft_strchr("10CPE", buf[0])))

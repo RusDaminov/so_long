@@ -72,3 +72,9 @@ int	main(int argc, char **argv)
 		ft_error("Error! Wrong argument number!\n");
 	return (0);
 }
+
+int 	ft_close_game(void)
+{
+	ft_error("Farewell\n");
+	exit(0);
+}

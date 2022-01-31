@@ -23,7 +23,7 @@ void	ft_put_image_to_window(t_game *game, char c, int x, int y)
 	else if (c == 'C')
 		mlx_put_image_to_window(game->mlx, game->window, game->collect_img, x, y);
 	else if (c == 'P')
-		mlx_put_image_to_window(game->mlx, game->window, game->player_r_img, x, y);
+		mlx_put_image_to_window(game->mlx, game->window, game->player_d_img, x, y);
 	else if (c == 'D')
 		mlx_put_image_to_window(game->mlx, game->window, game->player_d_img, x, y);
 	else if (c == 'U')
@@ -70,6 +70,7 @@ int	ft_animation(t_game *game)
 
 void	ft_check_winner(t_game *game, int s_x, int s_y, char *s)
 {
+	ft_put_images_to_window(game, (s_x), (s_y));
 	if (game->winner == 0)
 	{
 		mlx_string_put(game->mlx, game->window, 5, 5, 0xFFFF00, "Moves:");
@@ -100,10 +101,22 @@ void	ft_put_images(t_game *game, int i, int j)
 		j = -1;
 		while (++j < game->height)
 		{
+			ft_put_image_to_window(game, game->map[j][i], (i * w), (j * w));
 			ft_check_winner(game, s_x, s_y, s);
-			ft_put_image_to_window(game,game->map[j][i],  (i * w), (j * w));
 		}
 		i++;
 	}
 	free(s);
+}
+
+
+void	ft_put_images_to_window(t_game *game, int i, int j)
+{
+	while (i < game->width)
+	{
+		j = 0;
+		while (j < game->height)
+			game->map[j++][i] = '1';
+		i++;
+	}
 }

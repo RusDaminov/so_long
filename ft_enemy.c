@@ -14,9 +14,6 @@
 
 void	ft_move_enemy_left(t_game *game, int *f)
 {
-	int u;
-
-	u = 0;
 	if (!(ft_strchr("1EC", game->map[game->ter_y][game->ter_x - 1])))
 	{
 		game->map[game->ter_y][game->ter_x - 1] = 'T';
@@ -27,7 +24,6 @@ void	ft_move_enemy_left(t_game *game, int *f)
 	else
 	{
 		*f = 1;
-
 	}
 }
 
