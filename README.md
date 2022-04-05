@@ -2,4 +2,4 @@
 
 ez
 
-[![abernita's 21Project Score](https://badge42.herokuapp.com/api/project/abernita/so_long)](https://github.com/JaeSeoKim/badge42)
+[![abernita's 42 so_long Score](https://badge42.vercel.app/api/v2/cl1lx6ro1006409mn613u6flc/project/2474302)](https://github.com/JaeSeoKim/badge42)
